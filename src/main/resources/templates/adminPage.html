@@ -1,0 +1,17 @@
+<th:block th:include="/blocks/_head" xmlns:th="http://www.w3.org/1999/xhtml"></th:block>
+<body xmlns:th="http://www.w3.org/1999/xhtml">
+<th:block th:include="/blocks/_headerMenu"></th:block>
+
+<h2>Admin Page</h2>
+<h3>Welcome :
+    <span th:utext="${#request.userPrincipal.name}"></span>
+</h3>
+<b>This is protected page!</b>
+
+<br/><br/>
+
+<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <nav>
+        <div class="topNav" id="linkTopNav">
+            <div class="navLeft">
+<!--                <a th:if="${#request.userPrincipal != null}" th:href="@{/}">Главная страница</a>-->
+            </div>
+            <div class="navCenter">
+                <a th:if="${#request.userPrincipal != null}" th:href="@{/weather}">Погода</a>
+                <a th:if="${#request.userPrincipal != null}" th:href="@{/userInfo}">Профиль</a>
+            </div>
+            <div class="navRight">
+                <a th:if="${#request.userPrincipal == null}" th:href="@{/login}">Войти</a>
+                <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Выйти</a>
+                <a th:if="${#request.userPrincipal != null}" id="menu" href="" class="icon">&#9776;</a>
+            </div>
+        </div>
+    </nav>
+</div>

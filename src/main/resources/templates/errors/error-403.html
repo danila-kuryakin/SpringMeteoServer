@@ -1,0 +1,11 @@
+<th:block th:include="/blocks/_head" xmlns:th="http://www.w3.org/1999/xhtml"></th:block>
+<body xmlns:th="http://www.w3.org/1999/xhtml">
+<th:block th:include="/blocks/_headerMenu"></th:block>
+
+<h3 th:if="${message != null}" th:utext="${message}" style="color: red;"></h3>
+
+<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+
+</body>
+
+</html>

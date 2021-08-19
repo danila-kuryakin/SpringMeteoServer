@@ -1,0 +1,14 @@
+<th:block th:include="/blocks/_head" xmlns:th="http://www.w3.org/1999/xhtml"></th:block>
+<body xmlns:th="http://www.w3.org/1999/xhtml">
+<th:block th:include="/blocks/_headerMenu"></th:block>
+
+<h2>Информация о пользователе</h2>
+<h3>Имя пользователя : <span th:utext="${#request.userPrincipal.name}"></span></h3>
+
+<br/><br/>
+
+<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+
+</body>
+
+</html>
