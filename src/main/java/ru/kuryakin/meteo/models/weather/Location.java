@@ -1,5 +1,8 @@
 package ru.kuryakin.meteo.models.weather;
 
+/**
+ * Возможные местоположения.
+ */
 public enum Location {
     STREET("street"),
     BALCONY("balcony"),

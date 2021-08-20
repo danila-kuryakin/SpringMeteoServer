@@ -15,6 +15,9 @@ import ru.kuryakin.meteo.models.user.AppUser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Загрузка пользовательских данных.
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
@@ -23,6 +26,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private AppRoleDAO appRoleDAO;
 
+    /**
+     * Загрузка пользовательских данных по имени.
+     * @param userName - имя пользователя.
+     * @return данные пользователя.
+     * @throws UsernameNotFoundException вызывается еси пользователя не существует.
+     */
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         AppUser appUser = this.appUserDAO.findUserAccount(userName);
@@ -34,20 +43,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         System.out.println("Found User: " + appUser);
 
-        // [ROLE_USER, ROLE_ADMIN,..]
         List<String> roleNames = this.appRoleDAO.getRoleNames(appUser.getId());
 
         List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
         if (roleNames != null) {
             for (String role : roleNames) {
-                // ROLE_USER, ROLE_ADMIN,..
+
                 GrantedAuthority authority = new SimpleGrantedAuthority(role);
                 grantList.add(authority);
             }
         }
 
-        UserDetails userDetails = new User(appUser.getUserName(), //
-                appUser.getPassword(), grantList);
+        UserDetails userDetails = new User(appUser.getUserName(), appUser.getPassword(), grantList);
 
         return userDetails;
     }

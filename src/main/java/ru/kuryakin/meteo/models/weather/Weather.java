@@ -12,8 +12,6 @@ import java.util.GregorianCalendar;
 
 @Entity
 @AllArgsConstructor
-@Getter
-@Setter
 @Table
 public class Weather {
 

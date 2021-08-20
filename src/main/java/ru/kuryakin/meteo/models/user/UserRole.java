@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "user_role")

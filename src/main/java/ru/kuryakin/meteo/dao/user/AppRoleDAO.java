@@ -9,12 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Реализация взаимодействия с таблицей app_role.
+ */
 @Component
 public class AppRoleDAO {
 
+    /**
+     * Репозиторий.
+     */
     @Autowired
     private AppRoleRepository appRoleRepository;
 
+    /**
+     * Возвращает список ролей по id пользователя.
+     * @param userId - id пользователя.
+     * @return список ролей.
+     */
     public List<String> getRoleNames(Long userId) {
         return appRoleRepository.findByRoleName(userId);
     }

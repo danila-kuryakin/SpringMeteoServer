@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import ru.kuryakin.meteo.MeteoApplication;
 import ru.kuryakin.meteo.dao.WeatherDAO;
 import ru.kuryakin.meteo.models.weather.Location;
@@ -39,7 +38,7 @@ public class WeatherController {
         showTable = true;
     }
 
-    @GetMapping("/weather")
+    @GetMapping({"/", "/weather"})
     public String getAllRecords(Model  model){
         List<Weather> lastLocalCurrents = new ArrayList();
         for (Location location:Location.values()) {

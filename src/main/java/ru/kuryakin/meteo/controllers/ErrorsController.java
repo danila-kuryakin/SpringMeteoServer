@@ -13,6 +13,9 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
+/***
+ * Реализация контроллера обрабатывающего ошибки.
+ */
 @Controller
 public class  ErrorsController implements ErrorController {
 

@@ -19,6 +19,9 @@ public class AppRole {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    /**
+     * Роли: "ADMIN", "USER", "VIEWER".
+     */
     @Column(name = "name", length = 30, nullable = false)
     private String name;
 
